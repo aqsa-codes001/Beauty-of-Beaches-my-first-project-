@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beauty of Beaches</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="Query.Html">
+
+<style>
+body{
+font-family:Poppins,sans-serif;background:#071a2b;
+color:#f5f5f5
+}
+.navbar,.footer{
+    background:#04111f
+}
+.navbar-brand,.nav-link,.gold{
+    color:#e6bd65!important
+}
+.nav-link:hover{
+    color:white!important
+}
+.hero{
+    padding:100px 15px;
+    text-align:center;
+    background:linear-gradient(#04111faa,#04111faa),
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover
+}
+.hero h1{
+    color:#f0c76a;
+    font-weight:700
+}
+.btn-gold{
+    background:#d9ad50;
+    color:#071a2b;
+    font-weight:bold;border:0
+}
+.btn-gold:hover{
+    background:#f0cf7a;
+    color:#071a2b
+}
+.section{
+    padding:55px 0
+}
+.card{
+    background:#102a40;
+    color:white;
+    border:1px solid #b99548;
+    border-radius:12px;
+    overflow:hidden;
+    height:100%
+}
+.card img{
+    height:200px;
+    object-fit:cover
+}
+.card-title{
+    color:#edc56b
+}
+.section-title{
+    color:#edc56b;
+    text-align:center;
+    margin-bottom:30px
+}
+.gallery img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:20px
+}
+.form-control{
+    background:#102a40;
+    color:white;
+    border:1px solid #b99548
+}
+.form-control:focus{
+    background:#102a40;
+    color:white
+}
+.footer{
+    padding:25px;
+    text-align:center;
+    border-top:1px solid #b99548
+    }
+.map-container{
+    display: flex;
+    width: 100%;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+#map {
+    width: 80%;
+    border-radius: 25px;
+    margin: 20px calc(100%-60px);
+    height: 400px; 
+    border-radius: 12px;
+  }
+    
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<a class="navbar-brand gold font-weight-bold" href="#home"> Beauty of Beaches</a>
+<button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
+<span class="navbar-toggler-icon"></span></button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#beaches">Beaches</a></li>
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+
+<form class="form-inline ml-lg-3" id="searchForm">
+<input class="form-control mr-2" id="searchInput" type="search" placeholder="Search beaches">
+<button class="btn btn-gold" type="submit">Search</button>
+</form>
+</div>
+</nav>
+
+<!-- HOME -->
+<header class="hero" id="home">
+<h1>Discover the Beauty of Beaches</h1>
+<p>Explore beautiful beaches, golden sands and peaceful oceans.</p>
+<a href="#beaches" class="btn btn-gold">Explore Beaches</a>
+</header>
+<!-- This is the map container -->
+<div class="map-container">
+    <div id="map">
+
+    </div>
+</div>
+
+<!-- BEACHES -->
+<section class="section container" id="beaches">
+<h2 class="section-title">Beautiful Beaches</h2>
+<div class="row">
+
+<div class="col-md-6 col-lg-3 mb-4 beach-item">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21" alt="Northern Beach">
+<div class="card-body">
+<h5 class="card-title">Northern Beaches</h5>
+<p>Enjoy peaceful shores and beautiful ocean views.</p>
+</div></div></div>
+
+<div class="col-md-6 col-lg-3 mb-4 beach-item">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519046904884-53103b34b206" alt="Southern Beach">
+<div class="card-body">
+<h5 class="card-title">Southern Beaches</h5>
+<p>Relax on sandy beaches and enjoy the sunshine.</p>
+</div></div></div>
+
+<div class="col-md-6 col-lg-3 mb-4 beach-item">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda" alt="Eastern Beach">
+<div class="card-body">
+<h5 class="card-title">Eastern Beaches</h5>
+<p>Discover nature, blue water and scenic views.</p>
+</div></div></div>
+
+<div class="col-md-6 col-lg-3 mb-4 beach-item">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a" alt="Western Beach">
+<div class="card-body">
+<h5 class="card-title">Western Beaches</h5>
+<p>Experience amazing sunsets and coastal beauty.</p>
+</div></div></div>
+
+</div>
+<p id="noResults" class="text-center gold" style="display:none">No beaches found.</p>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about" style="background:#0b2236">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-6 mb-3">
+<img class="img-fluid rounded" src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda" alt="Beautiful beach">
+</div>
+<div class="col-md-6">
+<h2 class="gold">About Beauty of Beaches</h2>
+<p>Beauty of Beaches is a place to explore stunning coastlines, peaceful oceans and beautiful beach destinations.</p>
+<p>Discover nature's beauty and find inspiration for your next beach adventure.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- GALLERY -->
+<section class="section container" id="gallery">
+<h2 class="section-title">Beach Gallery</h2>
+<div class="row gallery">
+<div class="col-6 col-md-4"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Beach view"></div>
+<div class="col-6 col-md-4"><img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21" alt="Ocean waves"></div>
+<div class="col-6 col-md-4"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206" alt="Sandy beach"></div>
+<div class="col-6 col-md-4"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda" alt="Coastal view"></div>
+<div class="col-6 col-md-4"><img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a" alt="Island beach"></div>
+<div class="col-6 col-md-4"><img src="https://images.unsplash.com/photo-1498623116890-37e912163d5d" alt="Ocean scenery"></div>
+</div>
+</section>
+
+<!-- VISITOR COUNTER AND TIME -->
+<section class="section text-center" style="background:#0b2236">
+<div class="container">
+<h3 class="gold">Website Visitors</h3>
+<p>Visitors: <span id="visitors">0</span></p>
+<h5 class="gold">Current Date & Time</h5>
+<p id="datetime"></p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section container" id="contact">
+<h2 class="section-title">Contact & Feedback</h2>
+<div class="row justify-content-center">
+<div class="col-md-7">
+    <form id="feedbackForm">
+    <input class="form-control mb-3" type="text" placeholder="Your Name" required>
+    <input class="form-control mb-3" type="email" placeholder="Your Email" required>
+    <input class="form-control mb-3" type="text" placeholder="Subject" required>
+    <textarea class="form-control mb-3" rows="4" placeholder="Your Feedback" required></textarea>
+    <button class="btn btn-gold btn-block" type="submit">Send Feedback</button>
+    </form>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<h5 class="gold"> Beauty of Beaches</h5>
+<p>Discover the beauty of the world's beaches.</p>
+<a class="gold mx-2" href="#home">Home</a>
+<a class="gold mx-2" href="#beaches">Beaches</a>
+<a class="gold mx-2" href="#about">About</a>
+<a class="gold mx-2" href="#contact">Contact</a>
+<hr style="border-color:#b99548">
+<small>© 2026 Beauty of Beaches | All Rights Reserved</small>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// Beach search
+document.getElementById("searchForm").addEventListener("submit",function(e){
+e.preventDefault();
+let query=document.getElementById("searchInput").value.toLowerCase();
+let cards=document.querySelectorAll(".beach-item"),found=0;
+cards.forEach(card=>{
+let match=card.innerText.toLowerCase().includes(query);
+card.style.display=match?"":"none";
+if(match)found++;
+});
+document.getElementById("noResults").style.display=found?"none":"block";
+document.getElementById("beaches").scrollIntoView({behavior:"smooth"});
+});
+
+// Visitor counter
+let count=Number(localStorage.getItem("beachVisitors")||0)+1;
+localStorage.setItem("beachVisitors",count);
+document.getElementById("visitors").textContent=count;
+
+// Date and time
+function updateTime(){
+document.getElementById("datetime").textContent=new Date().toLocaleString();
+}
+updateTime();
+setInterval(updateTime,1000);
+
+// Feedback form demo
+document.getElementById("feedbackForm").addEventListener("submit",function(e){
+e.preventDefault();
+alert("Thank you for your feedback!");
+this.reset();
+});
+</script>
+<script>
+  function initMap() {
+    // Position you want - Karachi example
+    const location = { lat: 24.8607, lng: 67.0011 };
+    
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 13,
+      center: location,
+    });
+
+    new google.maps.Marker({
+      position: location,
+      map: map,
+    });
+  }
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAT8qfzn2u6saJIG1ksz3Q7OuxdAXqPPzM&callback=initMap">
+</script>
+
+</body>
+</html> 
